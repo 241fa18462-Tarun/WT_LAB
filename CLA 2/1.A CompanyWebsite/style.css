@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* TOP FRAME */
+
+.top {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-left: 40px;
+    border-radius: 50%;
+    background: white;
+    color: #243b55;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.title {
+    margin-left: 30px;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+
+.title p {
+    margin-top: 8px;
+    color: #d7e3f4;
+    font-size: 16px;
+}
+
+
+/* LEFT FRAME */
+
+.left {
+    background: #101827;
+    color: white;
+    height: 100vh;
+    padding: 20px 15px;
+}
+
+.left h2 {
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #3498db;
+}
+
+.left a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    margin: 8px 0;
+    border-radius: 8px;
+    background: #1e293b;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.left a:hover {
+    background: #3498db;
+    padding-left: 25px;
+}
+
+
+/* CENTER FRAME */
+
+.center {
+    background: #f4f7fb;
+    color: #172033;
+    padding: 35px;
+    min-height: 100vh;
+}
+
+.center h1 {
+    color: #1d4ed8;
+    margin-bottom: 20px;
+}
+
+.center p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    width: 220px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+.card h2,
+.card h3 {
+    color: #2563eb;
+}
+
+
+/* BRANCHES */
+
+.branch {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 500px;
+}
+
+.branch p {
+    background: #eef4ff;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+
+/* CONTACT */
+
+.contact {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 600px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+
+/* BOTTOM FRAME */
+
+.bottom {
+    background: #101827;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom p {
+    margin: 0;
+    font-size: 14px;
+}

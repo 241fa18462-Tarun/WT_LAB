@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Beautiful Image Gallery</title>
+
+    <!-- Document Level CSS -->
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .image-box {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        /* All images have 10px yellow border */
+        img {
+            width: 350px;
+            height: 350px;
+            object-fit: cover;
+            border: 10px solid yellow;
+            border-radius: 12px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #444;
+        }
+
+    </style>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Inline CSS -->
+        <h1 style="font-family: Verdana; font-size: 12pt; font-weight: bold;">
+            Beautiful Image Gallery
+        </h1>
+
+        <p>
+            Welcome to my attractive HTML webpage
+        </p>
+
+        <div class="gallery">
+
+            <div class="image-box">
+
+                <img src="https://i.pinimg.com/736x/5b/0d/09/5b0d0991109960135d7dae5622e3f87b.jpg"
+                     alt="Image 1">
+
+                <!-- Inline CSS -->
+                <h1 style="font-family: Verdana; font-size: 12pt; font-weight: bold;">
+                    Image One
+                </h1>
+
+                <input type="button"
+                       value="View Image 1"
+                       onclick="alert('You selected Image 1')">
+
+            </div>
+
+
+            <div class="image-box">
+
+                <img src="https://i.pinimg.com/736x/86/39/e7/8639e7ed0287b52bfb723f2cc1448a88.jpg"
+                     alt="Image 2">
+
+                <!-- Inline CSS -->
+                <h1 style="font-family: Verdana; font-size: 12pt; font-weight: bold;">
+                    Image Two
+                </h1>
+
+                <input type="button"
+                       value="View Image 2"
+                       onclick="alert('You selected Image 2')">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

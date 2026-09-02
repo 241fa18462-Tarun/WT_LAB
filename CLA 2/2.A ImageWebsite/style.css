@@ -1,0 +1,25 @@
+/* External CSS */
+
+/* All input buttons */
+input[type="button"] {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button changes to RED when mouse is over it */
+input[type="button"]:hover {
+    background-color: red;
+    transform: scale(1.08);
+}
+
+/* Button click effect */
+input[type="button"]:active {
+    transform: scale(0.95);
+}

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Video and Canvas</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .video-area {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .buttons {
+            width: 220px;
+        }
+
+        .buttons button {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .buttons button:hover {
+            background: #1d4ed8;
+        }
+
+        .video-box {
+            width: 650px;
+            background: #111827;
+            padding: 15px;
+            border-radius: 15px;
+        }
+
+        .video-box h3 {
+            color: white;
+            text-align: center;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            margin: auto;
+            border: 2px solid #111827;
+            border-radius: 10px;
+            background: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>HTML5 Video & Canvas</h1>
+    <p>Video Selection and Canvas Objects</p>
+</header>
+
+<div class="container">
+
+    <!-- VIDEO SECTION -->
+
+    <div class="card">
+
+        <h2>1. Video Gallery</h2>
+
+        <div class="video-area">
+
+            <div class="buttons">
+
+                <button onclick="playVideo(1)">
+                    ▶ Minions & Monsters
+                </button>
+
+                <button onclick="playVideo(2)">
+                    ▶ Toys Story 5
+                </button>
+
+            </div>
+
+            <div class="video-box">
+
+                <h3 id="videoTitle">
+                    Minions & Monsters
+                </h3>
+
+                <video id="myVideo" controls>
+
+                    <source
+                        src="https://web.wootly.ch/source?id=414d14d13843c097a80a32e3305602f06b38c890&sig=GJdrcf6GDAoBJtHTBRKsig&expire=1787723870&ofs=11&usr=196828"
+                        type="video/mp4">
+
+                    Your browser does not support HTML5 video.
+
+                </video>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CANVAS SECTION -->
+
+    <div class="card">
+
+        <h2>2. HTML5 Canvas Objects</h2>
+
+        <canvas id="myCanvas"
+                width="800"
+                height="450">
+        </canvas>
+
+    </div>
+
+</div>
+
+
+<footer>
+    HTML5 Web Design Lab
+</footer>
+
+
+<script>
+
+    // VIDEO SELECTION
+
+    function playVideo(number) {
+
+        var video = document.getElementById("myVideo");
+        var title = document.getElementById("videoTitle");
+
+        if (number == 1) {
+
+            video.src =
+            "https://web.wootly.ch/source?id=414d14d13843c097a80a32e3305602f06b38c890&sig=GJdrcf6GDAoBJtHTBRKsig&expire=1787723870&ofs=11&usr=196828";
+
+            title.innerHTML =
+            "Minions & Monsters";
+
+        }
+
+        else {
+
+            video.src =
+            "https://web.wootly.ch/source?id=ea6c950173b1d791d995eadcfe6150dc3e88961c&sig=1sJcwfhA_eoGbzNeAREliQ&expire=1787724083&ofs=11&usr=196790";
+
+            title.innerHTML =
+            "Toys Story 5";
+        }
+
+        video.load();
+        video.play();
+    }
+
+
+    // CANVAS
+
+    var canvas =
+        document.getElementById("myCanvas");
+
+    var ctx =
+        canvas.getContext("2d");
+
+
+    // Background
+
+    ctx.fillStyle = "#f8fafc";
+    ctx.fillRect(0, 0, 800, 450);
+
+
+    // Rectangle
+
+    ctx.fillStyle = "#2563eb";
+    ctx.fillRect(50, 60, 150, 90);
+
+    ctx.fillStyle = "#111827";
+    ctx.font = "18px Arial";
+    ctx.fillText("Rectangle", 80, 180);
+
+
+    // Circle
+
+    ctx.beginPath();
+
+    ctx.arc(
+        310, 105, 50,
+        0, 2 * Math.PI
+    );
+
+    ctx.fillStyle = "#ef4444";
+    ctx.fill();
+
+    ctx.stroke();
+
+    ctx.fillStyle = "#111827";
+    ctx.fillText("Circle", 280, 180);
+
+
+    // Line
+
+    ctx.beginPath();
+
+    ctx.moveTo(450, 60);
+    ctx.lineTo(600, 150);
+
+    ctx.strokeStyle = "#111827";
+    ctx.lineWidth = 6;
+    ctx.stroke();
+
+    ctx.fillStyle = "#111827";
+    ctx.fillText("Line", 510, 180);
+
+
+    // Triangle
+
+    ctx.beginPath();
+
+    ctx.moveTo(130, 250);
+    ctx.lineTo(70, 360);
+    ctx.lineTo(190, 360);
+
+    ctx.closePath();
+
+    ctx.fillStyle = "#22c55e";
+    ctx.fill();
+
+    ctx.stroke();
+
+    ctx.fillStyle = "#111827";
+    ctx.fillText("Triangle", 105, 395);
+
+
+    // Square
+
+    ctx.fillStyle = "#f59e0b";
+    ctx.fillRect(280, 250, 120, 120);
+
+    ctx.fillStyle = "#111827";
+    ctx.fillText("Square", 315, 395);
+
+
+    // Arc
+
+    ctx.beginPath();
+
+    ctx.arc(
+        570, 310, 70,
+        0, Math.PI
+    );
+
+    ctx.strokeStyle = "#7c3aed";
+    ctx.lineWidth = 8;
+    ctx.stroke();
+
+    ctx.fillStyle = "#111827";
+    ctx.fillText("Arc", 555, 395);
+
+
+    // Text
+
+    ctx.font = "bold 24px Arial";
+    ctx.fillStyle = "#111827";
+
+    ctx.fillText(
+        "HTML5 Canvas",
+        600, 250
+    );
+
+</script>
+
+</body>
+</html>
